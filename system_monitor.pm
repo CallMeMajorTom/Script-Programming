@@ -153,7 +153,8 @@ sub service {
 
     #systemctl status command to get the status of the given service
     my $status = `$cmd`;
-    if ( $status =~ /running/ ) {
+    $status =~ m/(?<=Active: ).*?(?=since)/;
+    if ( $& =~ /running/ ) {
         return 1;
     }
     else {

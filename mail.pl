@@ -105,7 +105,7 @@ my %user_passwd_100 = user_monitor::user_passwd(100);
 
 #Get the list of users that didn't change password over 100 days
 
-my %disk_usage_list = user_monitor::user_disk_usage(1);
+my %disk_usage_list = user_monitor::user_disk_usage(0);
 
 #Get the list of users whose disk usage over 0
 

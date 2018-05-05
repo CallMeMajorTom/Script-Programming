@@ -26,7 +26,12 @@ sub user_login {
 }
 
 sub user_passwd {
-    my $n = shift @_ or die "Miss the first parameters";
+     if(scalar(@_) >= 1){
+        my $n = shift @_ ;
+    }
+    else {
+        die "Miss the first parameters";
+    } 
     my @pass_time_original = `sudo cat /etc/shadow|cut -d: -f1,2,3`;
 
 #/etc/shadow: A password file
@@ -61,7 +66,12 @@ sub user_passwd {
 }
 
 sub user_disk_usage {
-    my $n = shift @_ or die "Miss the first parameters";
+    if(scalar(@_) >= 1){
+        my $n = shift @_ ;
+    }
+    else {
+        die "Miss the first parameters";
+    } 
     my @disk_usage = `sudo du -smc /home/*`;
 
 #du -smc: Display disk usage of /home directory with total disk usage at the last line in MB units

@@ -26,8 +26,9 @@ sub user_login {
 }
 
 sub user_passwd {
+     my $n;
      if(scalar(@_) >= 1){
-        my $n = shift @_ ;
+        $n = shift @_ ;
     }
     else {
         die "Miss the first parameters";
@@ -66,8 +67,9 @@ sub user_passwd {
 }
 
 sub user_disk_usage {
+    my $n;
     if(scalar(@_) >= 1){
-        my $n = shift @_ ;
+        $n = shift @_ ;
     }
     else {
         die "Miss the first parameters";
